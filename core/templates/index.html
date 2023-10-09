@@ -2,10 +2,31 @@
 
 {% block content %}
 
+    <div class="flex flex-col justify-center items-center text-center relative z-0 ">
+        <div class="p-10 flex text-white flex-col justify-center items-center text-center bg-gray-500 w-full">
+            <div class="flex flex-row">
+                <p class="text-9xl">Find</p>
+                <p class="text-9xl text-green-500">/</p>
+            </div>
+            <div class="flex flex-row">
+                <p class="text-9xl">Charge</p>
+                <p class="text-9xl text-green-500">/</p>
+            </div>
+            <div class="flex flex-row">
+                <p class="text-9xl">Go</p>
+                <p class="text-9xl text-green-500">/</p>
+            </div>
+            <div class="flex flex-row text-4xl pt-5">
+                <p>Find any</p>
+                <p class=" hover:text-green-400 hover:ease-in-out hover:duration-300 px-2.5">Electric</p>
+                <p>Charging Station in the UK.</p>
+            </div>
+        </div>
 
-    <div class="flex justify-center m-10 relative z-0 ">
-        <div id="map" style="height: 1000px; width:2000px;"></div>
+
+        <div id="map" style="height: 100vh; width:100%;"></div>
         {{ stations|json_script:"stations_json" }}
+
     </div>
 
 
