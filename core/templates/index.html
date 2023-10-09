@@ -27,18 +27,23 @@
         map.on('click', (e) => {
             let lat = e.latlng.lat
             let longitude = e.latlng.lng
-            L.marker([lat, longitude]).addTo(map)
+            L.marker([lat, longitude]).addTo(map);
+
+
             fetch(`/get-nearest-station?latitude=${lat}&longitude=${longitude}`)
                 .then(response => response.json())
                 .then(result => {
                     station_coordinates = result.coordinates
                     const roundedDistance = result.distance.toFixed(2);
 
-                    user_coordinates =[lat, longitude]
-                    let polyLine = L.polyline([
-                        user_coordinates,
-                        station_coordinates
-                    ], {color: 'red'}).addTo(map);
+                    user_coordinates = [lat, longitude]
+                    L.routing.control({
+                        waypoints: [
+                            L.latLng(lat, longitude),
+                            L.latLng(station_coordinates[0], station_coordinates[1])
+                        ],
+                        routeWhileDragging: true
+                    }).addTo(map);
 
                     var popup = L.popup()
                         .setLatLng([lat, longitude])
