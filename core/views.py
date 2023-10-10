@@ -6,9 +6,21 @@ from geopy.distance import geodesic
 
 # Create your views here.
 def index(request):
-    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:600])
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
     context = {'stations': stations}
     return render(request, 'index.html', context)
+
+
+def map_view(request):
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
+    context = {'stations': stations}
+    return render(request, 'map.html', context)
+
+
+def list_stations_view(request):
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
+    context = {'stations': stations}
+    return render(request, 'stations.html', context)
 
 
 def nearest_station(request):
@@ -17,7 +29,7 @@ def nearest_station(request):
     user_location = latitude, longitude
     station_distances = {}
 
-    for station in EVChargingLocation.objects.all()[:600]:
+    for station in EVChargingLocation.objects.all()[:1200]:
         station_location = station.latitude, station.longitude
         distance = geodesic(user_location, station_location).km
         station_distances[distance] = station_location
