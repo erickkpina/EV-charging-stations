@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <div class="flex text-white/100 flex-col items-center justify-start bg-black w-full h-screen relative">
+    <section class="flex text-white/100 flex-col items-center justify-start bg-black w-full h-screen relative">
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Imagem de fundo"
              src="{% static 'images/bg-image.jpg' %}" style="pointer-events: none;">
         <div class="flex flex-col items-center pt-20" style="position: relative; z-index: 1;">
             <div class="flex flex-row items-center">
-                <p class="text-9xl font-bold pr-3">FIND</p>
+                <p class="text-8xl font-black pr-3">FIND</p>
 
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
@@ -20,7 +20,7 @@
 
             </div>
             <div class="flex flex-row items-center">
-                <p class="text-9xl font-bold px-3">CHARGE</p>
+                <p class="text-8xl font-black px-3">CHARGE</p>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
                      class="bi bi-lightning-charge text-green-500" viewBox="0 0 16 16">
@@ -28,7 +28,7 @@
                 </svg>
             </div>
             <div class="flex flex-row items-center">
-                <p class="text-9xl font-bold px-3">GO</p>
+                <p class="text-8xl font-black px-3">GO</p>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
                      class="bi bi-signpost-split text-green-500" viewBox="0 0 16 16">
@@ -42,47 +42,47 @@
             </div>
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="flex text-white flex-col bg-black justify-center w-full h-screen relative">
+    <section class="flex text-white flex-col bg-black justify-center w-full h-screen relative">
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
              src="{% static 'images/bg-image-2.jpg' %}" style="pointer-events: none;">
         <div class="flex flex-row justify-around" style="position: relative; z-index: 1;">
             <div class="flex flex-col">
                 <div class="flex flex-row">
-                    <p class="text-6xl font-bold pr-2">Find</p>
-                    <p class="text-6xl text-green-400 font-bold">/</p>
+                    <p class="text-5xl font-black pr-2">Find</p>
+                    <p class="text-5xl text-green-400 font-black">/</p>
                 </div>
                 <div>
                     <p class="text-xl pt-2">
-                        Find a charge point that suits your needs,
+                        Find the nearest charge point from anywhere,
                         <br>
-                        when you need it. Search among more
+                        with a click. Search among more
                         <br>
                         than 1,000 public charge points.
                     </p>
                 </div>
 
                 <div class="flex flex-row pt-6">
-                    <p class="text-6xl font-bold pr-2">Charge</p>
+                    <p class="text-5xl font-black pr-2">Charge</p>
 
-                    <p class="text-6xl text-green-400 font-bold">/</p>
+                    <p class="text-5xl text-green-400 font-black">/</p>
                 </div>
                 <div>
                     <p class="text-xl pt-2">
-                        Quick and easy charging for your
+                        Quick and easy charging for your vehicle.
                         <br>
-                        Find a charging point near you
+                        We trace the best route for you to charge,
                         <br>
-                        and power up!
+                        so you can enjoy seamless journeys with ease
                     </p>
                 </div>
 
                 <div class="flex flex-row pt-6">
-                    <p class="text-6xl font-bold pr-2">Go</p>
+                    <p class="text-5xl font-black pr-2">Go</p>
 
-                    <p class="text-6xl text-green-400 font-bold">/</p>
+                    <p class="text-5xl text-green-400 font-black">/</p>
                 </div>
                 <div>
                     <p class="text-xl pt-2">
@@ -115,11 +115,30 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="flex text-white/100 flex-col items-center justify-start bg-black w-full h-80 relative">
-        <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="backgroung image 3"
+    <section class="flex text-white/100 flex-col items-center justify-center bg-black w-full h-80 relative">
+        <img class="absolute inset-0 w-full h-full object-cover opacity-10" alt="backgroung image 3"
              src="{% static 'images/bg-image-3.jpg' %}" style="pointer-events: none;">
-    </div>
+        <div class="flex flex-col justify-center items-center" style="position: relative; z-index: 1;">
+            <div class="flex flex-col items-center justify-center text-center"
+                 style="width: 300px; height: 100px; border: 2px solid #22c55e; border-radius: 100px; color: #22c55e">
+                <p class="text-4xl font-black text-green-500">1.200</p>
+                <p class="text-white text-xl">Charging stations</p>
+            </div>
+            <div class="py-3">
+                <p class="text-2xl font-bold ">Want to discover more about these charging stations?</p>
+            </div>
+            <button type="button"
+                    class=" border border-green-400 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                <a href="{% url 'list_stations' %}" class="text-white hover:no-underline">Stations</a>
+                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
 
 {% endblock %}
