@@ -2,54 +2,22 @@
 {% load static %}
 
 {% block content %}
-
-    <div id="map" style="height: 100vh; width:100%;" class="relative z-0"></div>
     {{ stations|json_script:"stations_json" }}
 
-
-    <script>
-        var map = L.map('map').setView([54.435049, -3.505543], 5);
-
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-
-        let stations = JSON.parse(document.getElementById('stations_json').textContent)
-
-        stations.forEach(station => {
-            L.marker([station.latitude, station.longitude]).addTo(map)
-        });
-
-        map.on('click', (e) => {
-            let lat = e.latlng.lat
-            let longitude = e.latlng.lng
-            L.marker([lat, longitude]).addTo(map);
-
-
-            fetch(`/get-nearest-station?latitude=${lat}&longitude=${longitude}`)
-                .then(response => response.json())
-                .then(result => {
-                    station_coordinates = result.coordinates
-                    const roundedDistance = result.distance.toFixed(2);
-
-                    user_coordinates = [lat, longitude]
-                    L.routing.control({
-                        waypoints: [
-                            L.latLng(lat, longitude),
-                            L.latLng(station_coordinates[0], station_coordinates[1])
-                        ],
-                        routeWhileDragging: true
-                    }).addTo(map);
-
-                    var popup = L.popup()
-                        .setLatLng([lat, longitude])
-                        .setContent(`Distance: ${roundedDistance} Km`)
-                        .openOn(map);
-                })
-
-        })
-    </script>
+    <h1>List of Charging Stations</h1>
+    <table>
+        <tr>
+            <th>Location Name</th>
+            <th>City / Town</th>
+            <th>Country</th>
+        </tr>
+        {% for station in stations %}
+        <tr>
+            <td>{{ station.location_name }}</td>
+            <td>{{ station.city_town }}</td>
+            <td>{{ station.country }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 {% endblock %}

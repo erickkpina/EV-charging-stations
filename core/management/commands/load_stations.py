@@ -13,6 +13,7 @@ class Command(BaseCommand):
             'AddressInfo - ID',
             'Location of Charging Point',
             'City / Town',
+            'Country',
             'Latitude',
             'Longitude'
         ]  # Defina as colunas que deseja extrair do CSV.
@@ -30,7 +31,9 @@ class Command(BaseCommand):
 
             # Use esses valores para criar um objeto EVChargingLocation
             EVChargingLocation.objects.get_or_create(
-                station_name=record['Location of Charging Point'],
+                location_name=record['Location of Charging Point'],
+                city_town=record['City / Town'],
+                country=record['Country'],
                 latitude=record['Latitude'],
                 longitude=record['Longitude']
             )

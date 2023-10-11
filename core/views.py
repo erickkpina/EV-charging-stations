@@ -18,7 +18,7 @@ def map_view(request):
 
 
 def list_stations_view(request):
-    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
+    stations = list(EVChargingLocation.objects.values('location_name', 'city_town', 'country')[:1200])
     context = {'stations': stations}
     return render(request, 'stations.html', context)
 
