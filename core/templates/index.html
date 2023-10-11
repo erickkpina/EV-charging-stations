@@ -75,7 +75,7 @@
                         <br>
                         We trace the best route for you to charge,
                         <br>
-                        so you can enjoy seamless journeys with ease
+                        so you can enjoy seamless journeys with ease.
                     </p>
                 </div>
 
@@ -118,7 +118,7 @@
     </section>
 
     <section class="flex text-white/100 flex-col items-center justify-center bg-black w-full h-80 relative">
-        <img class="absolute inset-0 w-full h-full object-cover opacity-10" alt="backgroung image 3"
+        <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="backgroung image 3"
              src="{% static 'images/bg-image-3.jpg' %}" style="pointer-events: none;">
         <div class="flex flex-col justify-center items-center" style="position: relative; z-index: 1;">
             <div class="flex flex-col items-center justify-center text-center"
@@ -140,5 +140,112 @@
             </button>
         </div>
     </section>
+
+    <section class="flex text-white flex-col bg-black justify-center w-full h-screen relative">
+        <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
+             src="{% static 'images/bg-image-5.jpg' %}" style="pointer-events: none;">
+
+        <div class="flex flex-col justify-center pl-44">
+            <p class="text-5xl font-black pr-2">
+                Join the
+                <br>
+
+            </p>
+            <div class="flex flex-row">
+                <p class="text-5xl font-black pr-2 items-center text-center">community</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="currentColor"
+                     class="bi bi-ev-front text-green-400" viewBox="0 0 16 16">
+                    <path d="M9.354 4.243a.188.188 0 0 0-.085-.218.186.186 0 0 0-.23.034L6.051 7.246a.188.188 0 0 0 .136.316h1.241l-.673 2.195a.188.188 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572l.782-2.195Z"></path>
+                    <path d="M4.819 2A2.5 2.5 0 0 0 2.52 3.515l-.792 1.848a.807.807 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 8.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413c0-.165-.016-.329-.049-.49l-.335-1.68a1.807 1.807 0 0 0-.964-1.261.807.807 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 2H4.82ZM3.44 3.91A1.5 1.5 0 0 1 4.82 3h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679c.02.097.029.195.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155-1.806 0-4.037-.084-5.592-.155A1.479 1.479 0 0 1 1 9.611v-.413c0-.099.01-.197.03-.294l.335-1.68a.807.807 0 0 1 .43-.563c.383-.19.685-.511.853-.904l.792-1.848Z"></path>
+                </svg>
+
+            </div>
+            <div class="pt-4">
+                <p class="text-xl">
+                    Thousands of EV drivers are searching for
+                    <br>
+                    stations every day to charge their EV.
+                    <br>
+                    Thanks to their contribution and dedication,
+                    <br>
+                    you can enjoy valuable information on charge
+                    <br>
+                    stations. And contributing is also a breeze:
+                    <br>
+                    Write a comment and send for us.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex text-white flex-col bg-black justify-center items-center w-full h-auto relative">
+        <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
+             src="{% static 'images/bg-image-6.jpg' %}" style="pointer-events: none;">
+
+        <div class="flex flex-col justify-center items-center p-10">
+            <p class="text-3xl font-black pr-2">
+                Write a comment to improve and create a better environment for everyone!
+            </p>
+            <form id="feedbackForm" class="flex flex-col p-4 items-start justify-center">
+                <label for="email">Email:</label>
+                <input type="email" id="email"
+                       class="w-72 h-10 border-2 rounded-xl border-green-500 bg-transparent focus:border-green-500 p-3"
+                       placeholder="example@stations.com"
+                       autocomplete="off"
+                       required>
+                <br>
+                <label for="comment" class="justify-start">Comment:</label>
+                <textarea id="comment" rows="4"
+                          class="w-72 h-48 border-2 rounded-xl border-green-500 bg-transparent focus:border-green-500 p-3"
+                          placeholder="Tell us your thoughts on our website." required></textarea>
+                <br>
+
+                <button type="submit"
+                        class="mx-auto items-center border border-green-400 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                    <a class="text-white hover:no-underline">Submit</a>
+                </button>
+            </form>
+
+            <div id="confirmationMessage"
+                 class="flex items-center p-4 mb-4 text-sm text-green-800 border-green-500 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                 role="alert" style="display: none;">
+                <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                     fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"></path>
+                </svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    <span class="font-medium">Thank you for your feedback!</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        const feedbackForm = document.getElementById("feedbackForm");
+        const emailInput = document.getElementById("email");
+        const commentInput = document.getElementById("comment");
+        const confirmationMessage = document.getElementById("confirmationMessage");
+
+        feedbackForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Handle form submission here (e.g., send data to the server).
+
+            // Show the confirmation message.
+            confirmationMessage.style.display = "block";
+
+            // Clear the form inputs.
+            emailInput.value = "";
+            commentInput.value = "";
+
+            // Hide the confirmation message after 1 second.
+            setTimeout(function () {
+                confirmationMessage.style.display = "none";
+            }, 4000);
+        });
+    </script>
 
 {% endblock %}
