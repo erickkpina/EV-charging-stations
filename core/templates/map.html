@@ -9,6 +9,7 @@
 
     <script>
         var map = L.map('map').setView([54.435049, -3.505543], 5);
+        L.Control.geocoder().addTo(map);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -46,9 +47,10 @@
                         routeWhileDragging: true
                     }).addTo(map);
 
+
                     var popup = L.popup()
                         .setLatLng([userLat, userLng])
-                        .setContent(`The nearest charging station from your current location is ${result.name} \n\n Distance: ${roundedDistance} Km`)
+                        .setContent(`The nearest charging station from your location is: ${result.name} <br> <br> Distance: ${roundedDistance} Km`)
                         .openOn(map);
                 })
             });
