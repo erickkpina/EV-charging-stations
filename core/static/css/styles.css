@@ -20,3 +20,7 @@
     scrollbar-width: thin; /* Largura da barra de rolagem */
     scrollbar-color: rgb(34, 197, 94) black; /* Cor do polegar e da área da barra de rolagem */
 }
+
+main{
+    min-height: 90vh;
+}

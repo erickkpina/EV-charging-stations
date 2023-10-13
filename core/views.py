@@ -36,6 +36,10 @@ def station_detail(request, station_id):
     return render(request, 'station_detail.html', context)
 
 
+def contact_view(request):
+    return render(request, 'contact.html')
+
+
 def nearest_station(request):
     latitude = request.GET.get('latitude')
     longitude = request.GET.get('longitude')
