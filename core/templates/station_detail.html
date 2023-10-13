@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="flex items-center justify-center py-10">
-        <h1 class="text-2xl font-black px-3 mx-auto">{{ station.location_name }}</h1>
-    </div>
 
     <div id="map_of_station" class="relative z-0" style="height: 100vh; width:100%;"></div>
 
@@ -15,7 +12,10 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        L.marker([{{ station.latitude }}, {{ station.longitude }}]).addTo(map);
+        L.marker([{{ station.latitude }}, {{ station.longitude }}]).addTo(map)
+            .bindPopup(`<p>{{ station.location_name }}</p>`)
+            .openPopup();
+
 
         // Obtem a localização do usuário
         if ("geolocation" in navigator) {
@@ -25,7 +25,34 @@
 
                 // Adiciona o marcador do usuário
                 L.marker([userLat, userLng]).addTo(map);
+
+                user_coordinates = [userLat, userLng]
+                L.routing.control({
+                    waypoints: [
+                        L.latLng(userLat, userLng),
+                        L.latLng({{ station.latitude }}, {{ station.longitude }})
+                    ],
+                    routeWhileDragging: true
+                }).addTo(map);
             });
         }
+
+        map.on('click', (e) => {
+            let lat = e.latlng.lat
+            let longitude = e.latlng.lng
+            L.marker([lat, longitude]).addTo(map);
+
+
+            user_coordinates = [lat, longitude]
+            L.routing.control({
+                waypoints: [
+                    L.latLng(lat, longitude),
+                    L.latLng({{ station.latitude }}, {{ station.longitude }})
+                ],
+                routeWhileDragging: true
+            }).addTo(map);
+
+
+        })
     </script>
 {% endblock %}

@@ -8,7 +8,7 @@
 
 
     <script>
-        var map = L.map('map').setView([54.435049, -3.505543], 5);
+        var map = L.map('map').setView([54.435049, -3.505543], 4.5);
         L.Control.geocoder().addTo(map);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +20,13 @@
         let stations = JSON.parse(document.getElementById('stations_json').textContent)
 
         stations.forEach(station => {
-            L.marker([station.latitude, station.longitude]).addTo(map)
+            var marker = L.marker([station.latitude, station.longitude]).addTo(map);
+            marker.on('click', function () {
+                var popup = L.popup()
+                    .setLatLng([station.latitude, station.longitude])
+                    .setContent(station.location_name)
+                    .openOn(map);
+            });
         });
 
         // Obtem a localização do usuário
@@ -33,26 +39,26 @@
                 L.marker([userLat, userLng]).addTo(map);
 
                 fetch(`/get-nearest-station?latitude=${userLat}&longitude=${userLng}`)
-                .then(response => response.json())
-                .then(result => {
-                    station_coordinates = result.coordinates
-                    const roundedDistance = result.distance.toFixed(2);
+                    .then(response => response.json())
+                    .then(result => {
+                        station_coordinates = result.coordinates
+                        const roundedDistance = result.distance.toFixed(2);
 
-                    user_coordinates = [userLat, userLng]
-                    L.routing.control({
-                        waypoints: [
-                            L.latLng(userLat, userLng),
-                            L.latLng(station_coordinates[0], station_coordinates[1])
-                        ],
-                        routeWhileDragging: true
-                    }).addTo(map);
+                        user_coordinates = [userLat, userLng]
+                        L.routing.control({
+                            waypoints: [
+                                L.latLng(userLat, userLng),
+                                L.latLng(station_coordinates[0], station_coordinates[1])
+                            ],
+                            routeWhileDragging: true
+                        }).addTo(map);
 
 
-                    var popup = L.popup()
-                        .setLatLng([userLat, userLng])
-                        .setContent(`The nearest charging station from your location is: ${result.name} <br> <br> Distance: ${roundedDistance} Km`)
-                        .openOn(map);
-                })
+                        var popup = L.popup()
+                            .setLatLng([userLat, userLng])
+                            .setContent(`The nearest charging station from your location is: ${result.name} <br> <br> Distance: ${roundedDistance} Km`)
+                            .openOn(map);
+                    })
             });
         }
 

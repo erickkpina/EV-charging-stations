@@ -13,7 +13,7 @@ def index(request):
 
 
 def map_view(request):
-    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude', 'location_name')[:1200])
     context = {'stations': stations}
     return render(request, 'map.html', context)
 
