@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="flex items-center justify-center py-10">
+        <h1 class="text-2xl font-black px-3 mx-auto">{{ station.location_name }}</h1>
+    </div>
+
+    <div id="map_of_station" class="relative z-0" style="height: 100vh; width:100%;"></div>
+
+    <script>
+        var map = L.map('map_of_station').setView([{{ station.latitude }}, {{ station.longitude }}], 15);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        L.marker([{{ station.latitude }}, {{ station.longitude }}]).addTo(map);
+
+        // Obtem a localização do usuário
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLat = position.coords.latitude;
+                var userLng = position.coords.longitude;
+
+                // Adiciona o marcador do usuário
+                L.marker([userLat, userLng]).addTo(map);
+            });
+        }
+    </script>
+{% endblock %}
