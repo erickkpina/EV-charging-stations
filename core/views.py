@@ -23,6 +23,12 @@ def list_stations_view(request):
     return render(request, 'stations.html', context)
 
 
+def stations_by_country_view(request, country):
+    stations = list(EVChargingLocation.objects.filter(country=country)[:1200])
+    context = {'stations': stations, 'country': country}
+    return render(request, 'stations_by_country.html', context)
+
+
 def nearest_station(request):
     latitude = request.GET.get('latitude')
     longitude = request.GET.get('longitude')

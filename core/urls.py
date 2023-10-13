@@ -6,4 +6,5 @@ urlpatterns = [
     path('map/', views.map_view, name='map'),
     path('stations/', views.list_stations_view, name='list_stations'),
     path('get-nearest-station/', views.nearest_station, name='nearest_station'),
+    path('stations-by-country/<str:country>/', views.stations_by_country_view, name='stations_by_country'),
 ]

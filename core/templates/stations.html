@@ -4,20 +4,44 @@
 {% block content %}
     {{ stations|json_script:"stations_json" }}
 
-    <h1>List of Charging Stations</h1>
-    <table>
-        <tr>
-            <th>Location Name</th>
-            <th>City / Town</th>
-            <th>Country</th>
-        </tr>
-        {% for station in stations %}
-        <tr>
-            <td>{{ station.location_name }}</td>
-            <td>{{ station.city_town }}</td>
-            <td>{{ station.country }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="text-center py-10">
+        <h1 class="text-2xl font-black px-3">Charging Stations</h1>
+        <p>charging stations for electric cars in the world</p>
+    </div>
+
+    <div id="stations-by-country" class="flex flex-wrap"></div>
+
+    <script>
+        $(document).ready(function () {
+            var stations = JSON.parse(document.getElementById('stations_json').textContent);
+
+            var stationsByCountry = {};
+            stations.forEach(function (station) {
+                var country = station.country;
+                if (!stationsByCountry[country]) {
+                    stationsByCountry[country] = [];
+                }
+                stationsByCountry[country].push(station);
+            });
+
+            var $stationsByCountry = $('#stations-by-country');
+            for (var country in stationsByCountry) {
+                var $countryBox = $('<div class="country-box"></div>');
+                var $countryHeader = $('<a class="country-header" href="/stations-by-country/' + country + '/">' + country + '</a>');
+                $countryBox.append($countryHeader);
+
+                var $stationList = $('<ul class="station-list"></ul>');
+                stationsByCountry[country].forEach(function (station) {
+                    var $stationItem = $('<li>' + station.location_name + '</li>');
+                    $stationList.append($stationItem);
+                });
+
+                $countryBox.append($stationList);
+                $stationsByCountry.append($countryBox);
+            }
+
+            $('.station-list').hide();
+        });
+    </script>
 
 {% endblock %}

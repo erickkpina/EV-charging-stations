@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-2xl font-black px-3">Charging Stations in {{ country }}</h1>
+    <table>
+        <tr>
+            <th>Location Name</th>
+            <th>City / Town</th>
+            <th>Country</th>
+        </tr>
+        {% for station in stations %}
+        <tr>
+            <td>{{ station.location_name }}</td>
+            <td>{{ station.city_town }}</td>
+            <td>{{ station.country }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

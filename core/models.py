@@ -9,6 +9,5 @@ class EVChargingLocation(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
 
-
     def __str__(self):
         return self.location_name
