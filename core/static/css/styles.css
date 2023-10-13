@@ -24,3 +24,7 @@
 main{
     min-height: 90vh;
 }
+
+#check:checked ~ ul {
+    left: 0;
+}
