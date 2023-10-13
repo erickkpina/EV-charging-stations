@@ -3,20 +3,20 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
+    width: 8px; /* Largura da barra de rolagem */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(34, 197, 94); /* Cor do polegar (barra deslizante) */
-  border-radius: 10px; /* Cantos arredondados do polegar */
+    background: rgb(34, 197, 94); /* Cor do polegar (barra deslizante) */
+    border-radius: 10px; /* Cantos arredondados do polegar */
 }
 
 ::-webkit-scrollbar-track {
-  background: black; /* Cor da área da barra de rolagem */
+    background: black; /* Cor da área da barra de rolagem */
 }
 
 /* Estilos para navegadores Firefox */
 * {
-  scrollbar-width: thin; /* Largura da barra de rolagem */
-  scrollbar-color: rgb(34, 197, 94) black; /* Cor do polegar e da área da barra de rolagem */
+    scrollbar-width: thin; /* Largura da barra de rolagem */
+    scrollbar-color: rgb(34, 197, 94) black; /* Cor do polegar e da área da barra de rolagem */
 }

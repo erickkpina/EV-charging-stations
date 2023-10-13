@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1 class="text-2xl font-black px-3">Charging Stations in {{ country }}</h1>
-    <table>
-        <tr>
-            <th>Location Name</th>
-            <th>City / Town</th>
-            <th>Country</th>
-        </tr>
+    <h1 class="text-2xl font-black pt-5 pl-5 pb-2">Charging stations in {{ country }}</h1>
+    <h2 class="text-xl text-gray-600 px-5 pb-5">List of charging stations for electric vehicles in {{ country }}.</h2>
+    <h3>{{ stations_count }}</h3>
+
+    <section class="flex flex-wrap justify-center">
         {% for station in stations %}
-        <tr>
-            <td>{{ station.location_name }}</td>
-            <td>{{ station.city_town }}</td>
-            <td>{{ station.country }}</td>
-        </tr>
+            <div class="block w-96 h-56 p-6 m-6 border-2 border-gray-100 rounded-lg shadow-xl bg-gray-100 hover:no-underline hover:text-black hover:border-green-500">
+                <h2 class="text-xl font-bold">{{ station.location_name }}</h2>
+                <p class="text-lg">{{ station.city_town }}</p>
+                <p class="text-lg">{{ station.latitude }}</p>
+            </div>
         {% endfor %}
-    </table>
+    </section>
+
+
+
 {% endblock %}

@@ -25,7 +25,7 @@ def list_stations_view(request):
 
 def stations_by_country_view(request, country):
     stations = list(EVChargingLocation.objects.filter(country=country)[:1200])
-    context = {'stations': stations, 'country': country}
+    context = {'stations': stations, 'country': country, 'stations_count': len(stations)}
     return render(request, 'stations_by_country.html', context)
 
 
