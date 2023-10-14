@@ -16,18 +16,19 @@
         </section>
     </section>
 
-    <div class="flex flex-row justify-between p-20">
+    <div class="flex md:flex-row flex-col justify-center items-center md:items-start md:justify-between md:p-20">
         <div class="pt-4 pl-4">
             <h1 class="text-5xl font-bold text-black">
                 Need additional <br> information?
             </h1>
-            <p class="text-base text-gray-500 pt-5">A multifaceted professional skilled in multiple fields of
+            <p class="text-base text-gray-500 pt-5">
+                A one-stop destination for electric vehicle owners,
                 <br>
-                research, development as well as a learning specialist.
+                providing comprehensive access to charging
                 <br>
-                Over 15 years of experience.
+                station information and maps.
             </p>
-            <section class="pt-4">
+            <section class="my-4">
                 <div class="flex flex-row items-center mb-3 hover:text-green-500 hover:ease-in-out hover:duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                          class="bi bi-telephone" viewBox="0 0 16 16">
@@ -60,10 +61,10 @@
                 <label for="name" class="text-green-500 pl-2 text-lg">*</label>
             </div>
             <input type="text" id="name"
-                   class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3"
+                   class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3 lg:w-[600px] w-[325px]"
                    placeholder="E.g: John Doe"
                    autocomplete="off"
-                   style="padding: 19px 30px; width: 600px;"
+                   style="padding: 19px 30px;"
                    required>
             <br>
             <div class="flex flex-row">
@@ -71,11 +72,11 @@
                 <label for="email" class="text-green-500 pl-2 text-lg">*</label>
             </div>
             <input type="email" id="email"
-                   class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3"
+                   class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3 lg:w-[600px] w-[325px]"
                    placeholder="youremail@example.com"
                    autocomplete="off"
 
-                   style="padding: 19px 30px; width: 600px;"
+                   style="padding: 19px 30px;"
                    required>
             <br>
             <div class="flex flex-row">
@@ -83,10 +84,10 @@
                 <label for="comment" class="text-green-500 pl-2 text-lg">*</label>
             </div>
             <textarea id="comment" rows="4"
-                      class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3"
+                      class="border-2 rounded border-green-500 bg-transparent focus:border-green-500 p-3 lg:w-[600px] w-[325px]"
                       placeholder="Write Here..."
 
-                      style="padding: 19px 30px; width: 600px; height: 200px;"
+                      style="padding: 19px 30px; height: 200px;"
                       required></textarea>
             <br>
 
