@@ -6,39 +6,38 @@
 
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Imagem de fundo"
              src="{% static 'images/bg-image.jpg' %}" style="pointer-events: none;">
-        <div class="flex flex-col items-center pt-20" style="position: relative; z-index: 1;">
-            <div class="flex flex-row items-center">
-                <p class="text-8xl font-black pr-3">FIND</p>
+        <div class="flex flex-col items-center m-[100px]" style="position: relative; z-index: 1;">
+            <div class="flex flex-col text-5xl lg:text-8xl font-black uppercase items-center justify-center">
+                <div class="flex flex-row items-center">
+                    <p class="">find</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         class="bi bi-pin-map text-green-500 w-10 h-10 lg:w-20 lg:h-20" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"></path>
+                        <path fill-rule="evenodd"
+                              d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"></path>
+                    </svg>
 
+                </div>
+                <div class="flex flex-row items-center">
+                    <p class="">charge</p>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                     class="bi bi-pin-map text-green-500" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                          d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"></path>
-                    <path fill-rule="evenodd"
-                          d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"></path>
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         class="bi bi-lightning-charge text-green-500 w-10 h-10 lg:w-20 lg:h-20" viewBox="0 0 16 16">
+                        <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"></path>
+                    </svg>
+                </div>
+                <div class="flex flex-row items-center">
+                    <p class="">go</p>
 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         class="bi bi-signpost-split text-green-500 w-10 h-10 lg:w-20 lg:h-20" viewBox="0 0 16 16">
+                        <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z"></path>
+                    </svg>
+                </div>
             </div>
-            <div class="flex flex-row items-center">
-                <p class="text-8xl font-black px-3">CHARGE</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                     class="bi bi-lightning-charge text-green-500" viewBox="0 0 16 16">
-                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"></path>
-                </svg>
-            </div>
-            <div class="flex flex-row items-center">
-                <p class="text-8xl font-black px-3">GO</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                     class="bi bi-signpost-split text-green-500" viewBox="0 0 16 16">
-                    <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z"></path>
-                </svg>
-            </div>
-            <div class="flex flex-row text-3xl pt-5">
-                <p>Find any</p>
-                <p class="text-green-400 px-2.5">Electric</p>
+            <div class="flex flex-col text-xl pt-5 text-center items-center justify-center lg:flex-row lg:text-3xl lg:pt-5">
+                <span class="flex flex-row">Find any <p class="text-green-500 px-2">Electric</p></span>
                 <p>Charging Station in the United Kingdom.</p>
             </div>
         </div>
@@ -49,14 +48,15 @@
     <section class="flex text-white flex-col bg-black justify-center w-full h-screen relative">
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
              src="{% static 'images/bg-image-2.jpg' %}" style="pointer-events: none;">
-        <div class="flex flex-row justify-around" style="position: relative; z-index: 1;">
-            <div class="flex flex-col">
+        <div class="flex flex-col lg:flex-row lg:justify-around justify-center items-center"
+             style="position: relative; z-index: 1;">
+            <div class="flex flex-col mb-4">
                 <div class="flex flex-row">
-                    <p class="text-5xl font-black pr-2">Find</p>
-                    <p class="text-5xl text-green-400 font-black">/</p>
+                    <p class="text-3xl lg:text-5xl font-black pr-2">Find</p>
+                    <p class="text-3xl lg:text-5xl text-green-500 font-black">/</p>
                 </div>
                 <div>
-                    <p class="text-xl pt-2">
+                    <p class="text-md lg:text-xl pt-2">
                         Find the nearest charge point from anywhere,
                         <br>
                         with a click. Search among more
@@ -66,12 +66,12 @@
                 </div>
 
                 <div class="flex flex-row pt-6">
-                    <p class="text-5xl font-black pr-2">Charge</p>
+                    <p class="text-3xl lg:text-5xl font-black pr-2">Charge</p>
 
-                    <p class="text-5xl text-green-400 font-black">/</p>
+                    <p class="text-3xl lg:text-5xl text-green-500 font-black">/</p>
                 </div>
                 <div>
-                    <p class="text-xl pt-2">
+                    <p class="text-md lg:text-xl pt-2">
                         Quick and easy charging for your vehicle.
                         <br>
                         We trace the best route for you to charge,
@@ -81,12 +81,12 @@
                 </div>
 
                 <div class="flex flex-row pt-6">
-                    <p class="text-5xl font-black pr-2">Go</p>
+                    <p class="text-3xl lg:text-5xl font-black pr-2">Go</p>
 
-                    <p class="text-5xl text-green-400 font-black">/</p>
+                    <p class="text-3xl lg:text-5xl text-green-500 font-black">/</p>
                 </div>
                 <div>
-                    <p class="text-xl pt-2">
+                    <p class="text-md lg:text-xl pt-2">
                         We build the most seamless charging
                         <br>
                         experience, so you can worry about
@@ -95,17 +95,18 @@
                     </p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center items-center">
-                <div class="ml-16">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor"
-                         class="bi bi-ev-station text-green-500" viewBox="0 0 16 16">
+            <div class="flex flex-col justify-center items-start">
+                <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         class="bi bi-ev-station ml-2.5 lg:ml-0 text-green-500 h-[100px] w-[100px] lg:h-[300px] lg:w-[300px]"
+                         viewBox="0 0 16 16">
                         <path d="M3.5 2a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5h-5Zm2.131 10.46H4.14v-.893h1.403v-.505H4.14v-.855h1.49v-.54H3.485V13h2.146v-.54Zm1.316.54h.794l1.106-3.333h-.733l-.74 2.615h-.031l-.747-2.615h-.764L6.947 13Z"></path>
                         <path d="M3 0a2 2 0 0 0-2 2v13H.5a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1H11v-4a1 1 0 0 1 1 1v.5a1.5 1.5 0 0 0 3 0V4a.5.5 0 0 0-.146-.354l-.5-.5a.5.5 0 0 0-.707 0l-.5.5A.5.5 0 0 0 13 4v3c0 .71.38 1.096.636 1.357l.007.008c.253.258.357.377.357.635v3.5a.5.5 0 1 1-1 0V12a2 2 0 0 0-2-2V2a2 2 0 0 0-2-2H3Zm7 2v13H2V2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1Z"></path>
                     </svg>
                 </div>
-                <div class="pt-5">
+                <div class="mt-4 lg:pt-5 lg:ml-[55px]">
                     <button type="button"
-                            class=" border border-green-400 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                            class=" border border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
                         <a href="{% url 'map' %}" class="text-white hover:no-underline">See Map</a>
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                              viewBox="0 0 14 10">
@@ -122,16 +123,16 @@
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="backgroung image 3"
              src="{% static 'images/bg-image-7.jpg' %}" style="pointer-events: none;">
         <div class="flex flex-col justify-center items-center" style="position: relative; z-index: 1;">
-            <div class="flex flex-col items-center justify-center text-center"
-                 style="width: 300px; height: 100px; border: 2px solid #22c55e; border-radius: 100px; color: #22c55e">
-                <p class="text-4xl font-black text-green-500">+7.000</p>
-                <p class="text-white text-xl">Charging stations</p>
+            <div class="flex flex-col items-center justify-center text-center w-[200px] h-[100px] lg:w-[300px] border-2 border-green-500 rounded-full"
+                 >
+                <p class="text-3xl lg:text-4xl font-black text-green-500">+7.000</p>
+                <p class="text-white text-lg lg:text-xl">Charging stations</p>
             </div>
-            <div class="py-3">
-                <p class="text-2xl font-bold ">Want to discover more about these charging stations?</p>
+            <div class="p-3 text-center">
+                <p class="text-lg lg:text-2xl font-bold ">Want to discover more about these charging stations?</p>
             </div>
             <button type="button"
-                    class=" border border-green-400 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                    class=" border border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
                 <a href="{% url 'list_stations' %}" class="text-white hover:no-underline">Stations</a>
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                      viewBox="0 0 14 10">
@@ -146,36 +147,53 @@
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
              src="{% static 'images/bg-image-5.jpg' %}" style="pointer-events: none;">
 
-        <div class="flex flex-col justify-center pl-44">
-            <p class="text-5xl font-black pr-2">
-                Join the
-                <br>
+        <div class="bg-black/60 rounded-xl m-4 z-20 md:bg-transparent">
+            <div class="flex flex-col justify-center items-center lg:items-start mx-[30px] my-[15px] lg:pl-44">
+                <div class="flex flex-col">
+                    <p class="text-3xl lg:text-5xl font-black pr-2">
+                        Join the
+                        <br>
+                    </p>
+                    <div class="flex flex-row">
+                        <p class="text-3xl lg:text-5xl font-black pr-[10px] items-center text-center">community</p>
 
-            </p>
-            <div class="flex flex-row">
-                <p class="text-5xl font-black pr-2 items-center text-center">community</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                             class="bi bi-ev-front text-green-600 w-[30px] h-[30px] lg:w-[53px] lg:h-[53px]"
+                             viewBox="0 0 16 16">
+                            <path d="M9.354 4.243a.188.188 0 0 0-.085-.218.186.186 0 0 0-.23.034L6.051 7.246a.188.188 0 0 0 .136.316h1.241l-.673 2.195a.188.188 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572l.782-2.195Z"></path>
+                            <path d="M4.819 2A2.5 2.5 0 0 0 2.52 3.515l-.792 1.848a.807.807 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 8.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413c0-.165-.016-.329-.049-.49l-.335-1.68a1.807 1.807 0 0 0-.964-1.261.807.807 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 2H4.82ZM3.44 3.91A1.5 1.5 0 0 1 4.82 3h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679c.02.097.029.195.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155-1.806 0-4.037-.084-5.592-.155A1.479 1.479 0 0 1 1 9.611v-.413c0-.099.01-.197.03-.294l.335-1.68a.807.807 0 0 1 .43-.563c.383-.19.685-.511.853-.904l.792-1.848Z"></path>
+                        </svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="currentColor"
-                     class="bi bi-ev-front text-green-500" viewBox="0 0 16 16">
-                    <path d="M9.354 4.243a.188.188 0 0 0-.085-.218.186.186 0 0 0-.23.034L6.051 7.246a.188.188 0 0 0 .136.316h1.241l-.673 2.195a.188.188 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572l.782-2.195Z"></path>
-                    <path d="M4.819 2A2.5 2.5 0 0 0 2.52 3.515l-.792 1.848a.807.807 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 8.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413c0-.165-.016-.329-.049-.49l-.335-1.68a1.807 1.807 0 0 0-.964-1.261.807.807 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 2H4.82ZM3.44 3.91A1.5 1.5 0 0 1 4.82 3h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679c.02.097.029.195.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155-1.806 0-4.037-.084-5.592-.155A1.479 1.479 0 0 1 1 9.611v-.413c0-.099.01-.197.03-.294l.335-1.68a.807.807 0 0 1 .43-.563c.383-.19.685-.511.853-.904l.792-1.848Z"></path>
-                </svg>
-
-            </div>
-            <div class="pt-4">
-                <p class="text-xl">
-                    Thousands of EV drivers are searching for
-                    <br>
-                    stations every day to charge their EV.
-                    <br>
-                    Thanks to their contribution and dedication,
-                    <br>
-                    you can enjoy valuable information on charge
-                    <br>
-                    stations. And contributing is also a breeze:
-                    <br>
-                    Write a comment and send for us.
-                </p>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <p class="lg:text-xl text-lg">
+                        Thousands of EV drivers are searching for
+                        <br>
+                        stations every day to charge their EV.
+                        <br>
+                        Thanks to their contribution and dedication,
+                        <br>
+                        you can enjoy valuable information on charge
+                        <br>
+                        stations. And contributing is also a breeze:
+                        <br>
+                        Write a comment and send for us.
+                    </p>
+                </div>
+                <div class="my-4">
+                    <button type="button"
+                            class=" border border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                        <a href="{% url 'contact' %}" class="text-white hover:no-underline">Contact Us</a>
+                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

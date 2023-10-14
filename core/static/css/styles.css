@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .app-main-text {
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -21,10 +25,3 @@
     scrollbar-color: rgb(34, 197, 94) black; /* Cor do polegar e da área da barra de rolagem */
 }
 
-main{
-    min-height: 90vh;
-}
-
-#check:checked ~ ul {
-    left: 0;
-}
