@@ -1,28 +1,36 @@
 import csv
-import json
+from django.conf import settings
 from django.core.management.base import BaseCommand
+from core.models import EVChargingLocation
 
 
 class Command(BaseCommand):
-    help = 'Convert a CSV file to JSON'
-
-    def add_arguments(self, parser):
-        parser.add_argument('input_file', type=str, help='Input CSV file')
-        parser.add_argument('output_file', type=str, help='Output JSON file')
+    help = 'Load data from EV Station file'
 
     def handle(self, *args, **kwargs):
-        input_file = kwargs['input_file']
-        output_file = kwargs['output_file']
+        data_file = settings.BASE_DIR / 'data' / 'EV_Charging_Stations.csv'
+        keys = [
+            'AddressInfo - ID',
+            'Location of Charging Point',
+            'City / Town',
+            'Latitude',
+            'Longitude'
+        ]  # Defina as colunas que deseja extrair do CSV.
 
-        data = []
+        records = []
+        with open(data_file, 'r', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                records.append({k: row[k] for k in keys})
 
-        with open(input_file, 'r', encoding='utf-8') as csv_file:
-            csv_reader = csv.DictReader(csv_file)
-            for row in csv_reader:
-                data.append(row)
+        for record in records:
+            # Certifique-se de que 'Latitude' e 'Longitude' sejam floats
+            record['Latitude'] = float(record['Latitude'])
+            record['Longitude'] = float(record['Longitude'])
 
-        with open(output_file, 'w', encoding='utf-8') as json_file:
-            json.dump(data, json_file, ensure_ascii=False, indent=4)
-
-        self.stdout.write(
-            self.style.SUCCESS(f'CSV file "{input_file}" converted to JSON file "{output_file}" successfully.'))
+            # Use esses valores para criar um objeto EVChargingLocation
+            EVChargingLocation.objects.get_or_create(
+                station_name=record['Location of Charging Point'],
+                latitude=record['Latitude'],
+                longitude=record['Longitude']
+            )

@@ -19,15 +19,15 @@
 
         let stations = JSON.parse(document.getElementById('stations_json').textContent)
 
+        var markers = L.markerClusterGroup();
+
         stations.forEach(station => {
-            var marker = L.marker([station.latitude, station.longitude]).addTo(map);
-            marker.on('click', function () {
-                var popup = L.popup()
-                    .setLatLng([station.latitude, station.longitude])
-                    .setContent(station.location_name)
-                    .openOn(map);
-            });
+            var marker = L.marker([station.latitude, station.longitude]);
+            marker.bindPopup(station.location_name);
+            markers.addLayer(marker);
         });
+
+        map.addLayer(markers);
 
         // Obtem a localização do usuário
         if ("geolocation" in navigator) {
