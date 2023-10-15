@@ -40,3 +40,7 @@ To see this site open this link:
 
 https://ev-charging-stations-175f23e994de.herokuapp.com
 
+## Commercial Use Disclaimer
+
+This website is intended for non-commercial use only. It is provided as a free service to users and should not be used for any commercial purposes.
+
