@@ -1,39 +1,75 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([41.5055, -72.700], 8);
+var map = L.map('map').setView([54.435049, -3.505543], 4.5);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
-    // Obtenha as estações do JSON incorporado
-    var stations = JSON.parse(document.getElementById('stations_json').textContent);
+let stations = JSON.parse(document.getElementById('stations_json').textContent)
 
-    stations.forEach(function (station) {
-        L.marker([station.latitude, station.longitude]).addTo(map);
-    });
+var markers = L.markerClusterGroup();
 
-    map.on('click', function (e) {
-        var lat = e.latlng.lat;
-        var longitude = e.latlng.lng;
-
-        L.marker([lat, longitude]).addTo(map);
-
-        fetch(`/get-nearest-station?latitude=${lat}&longitude=${longitude}`)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (result) {
-                var station_coordinates = result.coordinates;
-                var roundedDistance = result.distance.toFixed(2);
-                var user_coordinates = [lat, longitude];
-
-                var polyLine = L.polyline([user_coordinates, station_coordinates], { color: 'red' }).addTo(map);
-
-                var popup = L.popup()
-                    .setLatLng([lat, longitude])
-                    .setContent('Distance: ' + roundedDistance + ' Km')
-                    .openOn(map);
-            });
-    });
+stations.forEach(station => {
+    var marker = L.marker([station.latitude, station.longitude]);
+    marker.bindPopup(station.location_name);
+    markers.addLayer(marker);
 });
+
+map.addLayer(markers);
+
+function addUserMarker(lat, longitude) {
+    L.marker([lat, longitude]).addTo(map);
+}
+
+function addRoutingControl(userLat, userLng, station_coordinates) {
+    L.routing.control({
+        waypoints: [
+            L.latLng(userLat, userLng),
+            L.latLng(station_coordinates[0], station_coordinates[1])
+        ],
+        routeWhileDragging: true
+    }).addTo(map);
+}
+
+function addPopup(userLat, userLng, result) {
+    var popup = L.popup()
+        .setLatLng([userLat, userLng])
+        .setContent(`The nearest charging station from your location is: ${result.name} <br> <br> Distance: ${result.distance.toFixed(2)} Km`)
+        .openOn(map);
+}
+
+function handleLocationClick(e) {
+    let lat = e.latlng.lat;
+    let longitude = e.latlng.lng;
+
+    addUserMarker(lat, longitude);
+
+    fetch(`/get-nearest-station?latitude=${lat}&longitude=${longitude}`)
+        .then(response => response.json())
+        .then(result => {
+            const station_coordinates = result.coordinates;
+            addRoutingControl(lat, longitude, station_coordinates);
+            addPopup(lat, longitude, result);
+        });
+}
+function getUserLocation() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var userLat = position.coords.latitude;
+            var userLng = position.coords.longitude;
+
+            addUserMarker(userLat, userLng);
+
+            fetch(`/get-nearest-station?latitude=${userLat}&longitude=${userLng}`)
+                .then(response => response.json())
+                .then(result => {
+                    const station_coordinates = result.coordinates;
+                    addRoutingControl(userLat, userLng, station_coordinates);
+                    addPopup(userLat, userLng, result);
+                });
+        });
+    }
+}
+
+getUserLocation();
+map.on('click', handleLocationClick);

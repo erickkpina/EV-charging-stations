@@ -7,13 +7,13 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def index(request):
-    stations = list(EVChargingLocation.objects.values('latitude', 'longitude')[:1200])
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude'))
     context = {'stations': stations}
     return render(request, 'index.html', context)
 
 
 def map_view(request):
-    stations = list(EVChargingLocation.objects.values('latitude', 'longitude', 'location_name')[:1200])
+    stations = list(EVChargingLocation.objects.values('latitude', 'longitude', 'location_name'))
     context = {'stations': stations}
     return render(request, 'map.html', context)
 
@@ -47,7 +47,7 @@ def nearest_station(request):
     station_distances = {}
     station_name = ''
 
-    for station in EVChargingLocation.objects.all()[:1200]:
+    for station in EVChargingLocation.objects.all():
         station_name = station.location_name
         station_location = station.latitude, station.longitude
         distance = geodesic(user_location, station_location).km

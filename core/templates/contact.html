@@ -17,7 +17,7 @@
     </section>
 
     <div class="flex md:flex-row flex-col justify-center items-center md:items-start md:justify-between md:p-20">
-        <div class="pt-4 pl-4">
+        <div class="lg:pt-4 lg:pl-4 px-4 py-4">
             <h1 class="text-5xl font-bold text-black">
                 Need additional <br> information?
             </h1>
@@ -92,7 +92,7 @@
             <br>
 
             <button type="submit"
-                    class="w-full mx-auto items-center h-16 border border-green-400 shadow-lg shadow-green-500/50 bg-green-500 hover:shadow-lg hover:shadow-xl hover:shadow-green-500/50 hover:ease-in-out hover:duration-300 font-medium rounded text-md px-3 py-2.5 text-center inline-flex items-center justify-center">
+                    class="w-full mx-auto h-16 border-green-400 shadow-lg shadow-green-500/50 bg-green-500 hover:shadow-xl hover:shadow-green-500/50 hover:ease-in-out hover:duration-300 font-medium rounded text-md px-3 py-2.5 text-center inline-flex items-center justify-center">
                 <a class="flex flex-row text-white hover:no-underline justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-envelope-paper" viewBox="0 0 16 16">
@@ -102,44 +102,8 @@
                 </a>
             </button>
         </form>
-
-        <div id="confirmationMessage"
-             class="fixed bottom-7 left-0 right-0 mx-auto w-1/4 p-4 text-center text-green-800 border-green-500 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
-             role="alert" style="display: none;">
-            <svg class="w-4 h-4 mx-auto mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                 fill="currentColor"
-                 viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"></path>
-            </svg>
-            <div>
-                <span class="font-medium">Email Sent!</span>
-            </div>
-        </div>
     </div>
 
-    <script>
-        const feedbackForm = document.getElementById("feedbackForm");
-        const emailInput = document.getElementById("email");
-        const commentInput = document.getElementById("comment");
-        const confirmationMessage = document.getElementById("confirmationMessage");
-
-        feedbackForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Handle form submission here (e.g., send data to the server).
-
-            // Show the confirmation message.
-            confirmationMessage.style.display = "block";
-
-            // Clear the form inputs.
-            emailInput.value = "";
-            commentInput.value = "";
-
-            // Hide the confirmation message after 1 second.
-            setTimeout(function () {
-                confirmationMessage.style.display = "none";
-            }, 4000);
-        });
-    </script>
+    <script src="{% static 'javaScript/contact.js' %}"></script>
 
 {% endblock %}
