@@ -70,14 +70,15 @@
                 </li>
                 <li class="text-white my-2 lg:hidden">
                     <a id="contact-link" href="#"
-                       class="p-2 lg:bg-transparent lg:text-white lg:p-0 hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300">Contact Us</a>
+                       class="p-2 lg:bg-transparent lg:text-white lg:p-0 hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300">Contact
+                        Us</a>
                 </li>
             </ul>
         </div>
-        <div class="hidden lg:block">
-            <a href="{% url 'contact' %}" class="text-white lg:text-white hover:no-underline">
+        <div class="hidden lg:flex lg:flex-row lg:items-center lg:justify-center">
+            <a href="{% url 'contact' %}" class="text-white lg:text-white hover:no-underline pr-3">
                 <button type="button"
-                        class=" border hover:border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                        class="border hover:border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
                     Contact Us
                     <svg class="w-3.5 h-3.5 ml-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                          fill="none"
@@ -87,6 +88,7 @@
                     </svg>
                 </button>
             </a>
+            <p class="text-black">----------</p>
         </div>
     </div>
 </header>
