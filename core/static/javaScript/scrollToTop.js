@@ -1,12 +1,5 @@
 function scrolToTopHome() {
     if (window.location.pathname === '/') {
-        document.getElementById('top-link').addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
 
         document.getElementById('home-link').addEventListener('click', function (e) {
             e.preventDefault();
@@ -16,8 +9,23 @@ function scrolToTopHome() {
             });
         });
     } else {
-        document.getElementById('home-link').href = '/';
 
+        document.getElementById('home-link').href = '/';
+    }
+}
+
+function scrolToTopHomeLink() {
+    if (window.location.pathname === '/') {
+        document.getElementById('top-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+
+        document.getElementById('top-link').href = '/';
     }
 }
 
@@ -64,6 +72,7 @@ function scrollToTopContact() {
 }
 
 scrolToTopHome();
+scrolToTopHomeLink();
 scrollToTopStations();
 scrollToTopMap();
 scrollToTopContact();

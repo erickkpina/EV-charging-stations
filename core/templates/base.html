@@ -68,25 +68,25 @@
                     <a id="map-link" href="#"
                        class="p-2 lg:bg-transparent lg:text-white lg:p-0 hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300">Map</a>
                 </li>
-                <li class="text-white my-2">
+                <li class="text-white my-2 lg:hidden">
                     <a id="contact-link" href="#"
-                       class="p-2 lg:bg-transparent lg:text-white lg:p-0 hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300">Contact</a>
+                       class="p-2 lg:bg-transparent lg:text-white lg:p-0 hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300">Contact Us</a>
                 </li>
             </ul>
         </div>
         <div class="hidden lg:block">
-            <a href="#"
-               class="px-2 py-1.6 lg:text-white hover:no-underline hover:text-green-500 hover:ease-in-out hover:duration-300 text-lg">Register</a>
-            <button type="button"
-                    class=" border hover:border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
-                <a href="#" class="text-white lg:text-white hover:no-underline">Log in</a>
-                <svg class="w-3.5 h-3.5 ml-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                     fill="none"
-                     viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-                </svg>
-            </button>
+            <a href="{% url 'contact' %}" class="text-white lg:text-white hover:no-underline">
+                <button type="button"
+                        class=" border hover:border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
+                    Contact Us
+                    <svg class="w-3.5 h-3.5 ml-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+                    </svg>
+                </button>
+            </a>
         </div>
     </div>
 </header>
@@ -97,7 +97,7 @@
 <footer class="h-20 absolute bottom-0 w-full bg-black text-white flex flex-col justify-center lg:flex-row lg:justify-between items-center px-20">
     <div class="flex flex-row pt-2">
         <p>© 2023 EV</p>
-        <p class="text-green-500 pl-1">Chargingstations</p>
+        <p class="text-green-500 pl-1 uppercase">stations</p>
     </div>
     <div class="flex lg:flex-col items-center justify-center">
         <p class="py-2 px-2">Follow me:</p>
