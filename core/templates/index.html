@@ -41,7 +41,7 @@
     </section>
 
 
-    <section class="flex flex-col justify-between items-center text-center text-white  bg-black w-full h-screen relative">
+    <section class="flex flex-col justify-evenly lg:justify-between items-center text-center text-white  bg-black w-full h-screen relative">
         <img class="absolute inset-0 w-full h-full object-cover opacity-20" alt="BG-Image-2"
              src="{% static 'images/bg-image-2.jpg' %}" style="pointer-events: none;">
 
@@ -51,9 +51,9 @@
         </div>
         <section class="flex flex-col justify-center items-center text-center lg:mt-12"
              style="position: relative; z-index: 10;">
-            <div class="lg:flex lg:flex-row lg:mb-8">
-                <div class="flex flex-col pt-4">
-                    <p class="text-3xl lg:text-5xl font-black">Search</p>
+            <div class="lg:flex lg:flex-row lg:mb-6 ">
+                <div class="flex flex-col">
+                    <p class="text-3xl lg:text-5xl font-black lg:pt-6">Search</p>
                     <p class="text-md lg:text-lg pt-2">
                         <span class="text-green-500 font-bold">Search</span> for over 7,000 public
                         <br>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col pt-6">
+            <div class="flex flex-col pt-6 lg:mb-10">
                 <p class="text-3xl lg:text-5xl font-black pr-2">Power</p>
                 <p class="text-md lg:text-lg pt-2">
                     We handle everything you need
@@ -89,7 +89,7 @@
                 </p>
             </div>
         </section>
-        <div class="mt-4 lg:pt-5 mb-14 lg:mb-20">
+        <div class="lg:pt-5 mb-20">
             <a href="{% url 'map' %}" class="text-white hover:no-underline">
                 <button type="button"
                         class=" border border-green-500 hover:bg-green-500 hover:ease-in-out hover:duration-300 font-medium rounded-lg text-md px-3 py-2.5 text-center inline-flex items-center">
