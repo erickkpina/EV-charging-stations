@@ -1,6 +1,7 @@
 # Electric Vehicle Charging Stations Finder
 
-![website_screenshot](https://github.com/erickkpina/EV-charging-stations/assets/91835382/62d877ac-eaeb-4fa7-b073-e1c8aaeb6198)
+![website_screenshot](https://github.com/erickkpina/EV-charging-stations/assets/91835382/eaa55937-4450-4a60-b9e0-b7b89d880eec)
+
 
 The Electric Vehicle Charging Stations Finder is a web application that allows users to discover and locate electric vehicle charging points throughout the United Kingdom. This web application is powered by a CSV dataset containing information about more than 7,000 public charging stations. Users can explore the map to find the nearest charging station, plan routes, receive turn-by-turn directions, and even customize routes with intermediate waypoints.
 
